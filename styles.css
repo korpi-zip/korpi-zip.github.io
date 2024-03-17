@@ -6,17 +6,20 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #833ab4; /* Color principal de Instagram */
     color: #fff;
     text-align: center;
     padding: 20px 0;
+}
+
+nav {
+    float: right; /* Mover la barra de menú a la derecha */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 nav ul li {
@@ -25,12 +28,12 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
 }
 
 nav ul li a:hover {
-    color: #777;
+    color: #c13584; /* Color de Instagram al pasar el mouse */
 }
 
 main {
@@ -38,7 +41,7 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background-color: #833ab4; /* Color principal de Instagram */
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -50,7 +53,7 @@ h1 {
 }
 
 h2 {
-    color: #333;
+    color: #833ab4; /* Color principal de Instagram */
 }
 
 p {
