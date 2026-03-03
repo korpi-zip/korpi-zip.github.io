@@ -10,55 +10,6 @@ const COLLABORATIVE_REPOS = [
     'JojhanPerezArroyave/pawplay-feeder'
 ];
 
-// Descripciones auto-generadas para repos sin descripción
-const autoDescriptions = {
-    'test': 'Suite de testing automatizado para validación de código.',
-    'api': 'Interfaz REST robusta y escalable.',
-    'bot': 'Bot automatizado con funcionalidades avanzadas.',
-    'tool': 'Herramienta útil para optimizar procesos.',
-    'cli': 'Interfaz de línea de comandos intuitiva y poderosa.',
-    'lib': 'Librería reutilizable y bien documentada.',
-    'server': 'Servidor backend con arquitectura moderna.',
-    'app': 'Aplicación completa y funcional.',
-    'default': 'Proyecto interesante con código de alta calidad.'
-};
-
-// Función para generar descripción basada en el nombre
-function generateDescription(repoName) {
-    const keywords = {
-        'test': 'Suite de testing automatizado para validación de código.',
-        'api': 'Interfaz REST robusta y escalable.',
-        'bot': 'Bot automatizado con funcionalidades avanzadas.',
-        'tool': 'Herramienta útil para optimizar procesos.',
-        'cli': 'Interfaz de línea de comandos intuitiva y poderosa.',
-        'lib': 'Librería reutilizable y bien documentada.',
-        'server': 'Servidor backend con arquitectura moderna.',
-        'app': 'Aplicación completa y funcional.',
-        'portfolio': 'Portafolio personal con diseño moderno.',
-        'website': 'Sitio web con funcionalidades avanzadas.',
-        'script': 'Script de automatización eficiente.',
-        'automation': 'Sistema de automatización de procesos.',
-        'backend': 'Aplicación backend con arquitectura escalable.',
-        'frontend': 'Interfaz de usuario moderna y responsive.',
-        'fullstack': 'Aplicación full-stack completa.',
-        'docker': 'Configuración Docker para despliegue.',
-        'config': 'Configuración y scripts de setup.',
-        'utils': 'Utilidades y funciones auxiliares.',
-        'demo': 'Proyecto de demostración.',
-        'example': 'Ejemplo de implementación.'
-    };
-
-    const lowerName = repoName.toLowerCase();
-    
-    for (const [key, desc] of Object.entries(keywords)) {
-        if (lowerName.includes(key)) {
-            return desc;
-        }
-    }
-
-    return autoDescriptions['default'];
-}
-
 // Obtener repositorios de GitHub
 async function fetchGitHubRepos() {
     try {
@@ -127,7 +78,7 @@ async function getRepoLanguages(repoUrl) {
 
 // Crear tarjeta de proyecto
 function createProjectCard(repo, languages = []) {
-    const description = repo.description || generateDescription(repo.name);
+    const description = repo.description || 'Descripción no disponible';
     const repoName = escapeHtml(repo.name);
     const repoDescription = escapeHtml(description);
     const repoUrl = repo.html_url;
@@ -381,7 +332,7 @@ function loadProfileImage() {
 
     const profileImg = new Image();
     // Usar ruta relativa compatible con GitHub Pages
-    profileImg.src = './assets/images/profile.jpg';
+    profileImg.src = './assets/images/profile.png';
     
     profileImg.onload = () => {
         // Si la imagen existe, reemplazar el ícono
