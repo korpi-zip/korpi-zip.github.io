@@ -349,6 +349,48 @@ function loadProfileImage() {
     };
 }
 
+// Funcionalidad de modal para imágenes de Minciencias
+function initImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+    const mincienciasImages = document.querySelectorAll('#minciencias .project-img');
+
+    // Agregar evento de clic a cada imagen
+    mincienciasImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.classList.add('show');
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            document.body.style.overflow = 'hidden'; // Evitar scroll
+        });
+    });
+
+    // Cerrar con el botón X
+    closeBtn.addEventListener('click', function() {
+        closeModal();
+    });
+
+    // Cerrar al hacer clic en el fondo
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Cerrar con la tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = ''; // Restaurar scroll
+    }
+}
+
 // Inicializar todo cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
@@ -357,4 +399,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimation();
     updateCurrentYear();
     loadProfileImage();
+    initImageModal();
 });
