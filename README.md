@@ -171,7 +171,7 @@ Este proyecto es compatible con:
 
 ## Licencia
 
-MIT - Libre para usar y modificar
+GNU AGPLv3 - Copyleft fuerte: si distribuyes o publicas versiones modificadas (incluido como servicio web), debes mantener el codigo fuente abierto bajo la misma licencia. Consulta el archivo LICENSE para el texto completo.
 
 ---
 
