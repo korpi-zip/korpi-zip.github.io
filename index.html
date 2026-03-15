@@ -34,10 +34,10 @@
         <div class="navbar-container">
             <div class="logo">Santiago Escobar Alzate</div>
             <ul class="nav-links">
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#minciencias">Minciencias</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#proyectos-destacados" data-i18n="nav.featured">Destacados</a></li>
+                <li><a href="#proyectos" data-i18n="nav.allProjects">Todos mis proyectos</a></li>
+                <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+                <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
             </ul>
             <a href="https://www.linkedin.com/in/santiescoal" target="_blank" class="cta-btn" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i> LinkedIn
@@ -48,16 +48,22 @@
             <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
                 <i class="fas fa-moon"></i>
             </button>
+            <button class="language-toggle" id="languageToggle" aria-label="Cambiar idioma" type="button">
+                <span class="language-thumb" aria-hidden="true"></span>
+                <span class="lang-option lang-es">ES</span>
+                <span class="lang-option lang-en">EN</span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Hola, soy Santiago Escobar Alzate</h1>
-            <p class="hero-subtitle">Computer Science & Engineering Student | Fullstack Developer | QA Automation | IA & IoT</p>
-            <button class="btn btn-primary" onclick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'})">
-                Ver proyectos
+            <h1 class="hero-title" data-i18n="hero.title">Hola, soy Santiago Escobar Alzate</h1>
+            <p class="hero-role" data-i18n="hero.role">Estudiante de Ingeniería de Sistemas y Computación</p>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Desarrollo y prototipo soluciones con software, IoT e inteligencia artificial.</p>
+            <button class="btn btn-primary" onclick="document.getElementById('proyectos-destacados').scrollIntoView({behavior: 'smooth'})">
+                <span data-i18n="hero.cta">Ver proyectos</span>
             </button>
         </div>
         <div class="hero-visual">
@@ -67,74 +73,148 @@
         </div>
     </section>
 
-    <!-- Minciencias Projects Section -->
-    <section id="minciencias" class="minciencias-projects">
+    <!-- Featured Projects Section -->
+    <section id="proyectos-destacados" class="featured-projects">
         <div class="container">
-            <h2 class="section-title">Proyectos Convocatoria Minciencias</h2>
-            <div class="minciencias-grid">
-                <!-- Proyecto Alimentador de Gatos -->
-                <div class="minciencias-card">
-                    <div class="minciencias-image">
-                        <!-- Espacio para imagen del alimentador de gatos -->
-                        <img src="./assets/images/feeder.jpg" 
-                             alt="Sistema automatizado de alimentación para gatos" 
-                             class="project-img">
+            <h2 class="section-title" data-i18n="sections.featured">Proyectos Destacados</h2>
+            <div class="featured-grid">
+                <!-- Proyecto destacado: Alimentador de Gatos -->
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <div class="media-gallery">
+                            <img src="./assets/images/feeder.jpg" 
+                                 alt="Sistema automatizado de alimentación para gatos" 
+                                 class="project-img">
+                            <div class="project-thumbnails">
+                                <img src="./assets/images/pawplay2.jpg" 
+                                     alt="PawPlay Feeder - vista adicional" 
+                                     class="project-img thumb-img">
+                                <img src="./assets/images/feeder_logo.jpeg" 
+                                     alt="PawPlay Feeder - logo" 
+                                     class="project-img thumb-img">
+                                <div class="video-thumb" data-video="./assets/images/pawplayvideo.mp4" data-i18n-title="gallery.playVideo" title="Reproducir video">
+                                    <video src="./assets/images/pawplayvideo.mp4" muted preload="metadata" playsinline></video>
+                                    <div class="play-overlay"><i class="fas fa-play"></i></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="minciencias-content">
-                        <h3>Sistema Automatizado de Alimentación para Gatos</h3>
-                        <p class="project-description">
-                            PawPlay Feeder combina dos mundos: alimentación automática y enriquecimiento ambiental, 
-                            lo que lo diferencia de un comedero inteligente convencional. No solo sirve comida, sino que propone 
-                            una rutina interactiva que aporta actividad física y mental.
-                        </p>
+                    <div class="featured-content">
+                        <h3 data-i18n="featured.pawplay.title">PawPlay Feeder</h3>
+                        <p class="project-summary" data-i18n="featured.pawplay.summary">Automatizando la alimentación de gatos de forma gamificada para activar sus instintos.</p>
+                        <div class="project-brief">
+                            <p><strong data-i18n="featured.brief.problem">Problema:</strong> <span data-i18n="featured.pawplay.problem">Muchos gatos de interior enfrentan sedentarismo y obesidad por rutinas de alimentación poco estimulantes.</span></p>
+                            <p><strong data-i18n="featured.brief.approach">Enfoque:</strong> <span data-i18n="featured.pawplay.approach">PawPlay Feeder combina automatización de comida con dinámicas de interacción para activar conducta y movimiento.</span></p>
+                            <p><strong data-i18n="featured.brief.impact">Aporte a calidad de vida:</strong> <span data-i18n="featured.pawplay.impact">Promueve hábitos más saludables, reduce riesgos asociados al sobrepeso y mejora el bienestar diario de la mascota.</span></p>
+                        </div>
                         <div class="project-tech">
-                            <span class="tech-badge">Arduino</span>
-                            <span class="tech-badge">IoT</span>
-                            <span class="tech-badge">Automatización</span>
-                            <span class="tech-badge">Sensores</span>
+                            <span class="tech-badge" data-i18n="featured.pawplay.tech1">Arduino</span>
+                            <span class="tech-badge" data-i18n="featured.pawplay.tech2">IoT</span>
+                            <span class="tech-badge" data-i18n="featured.pawplay.tech3">Automatización</span>
+                            <span class="tech-badge" data-i18n="featured.pawplay.tech4">Sensores</span>
                         </div>
                         <div class="project-links">
-                            <div class="private-repo-notice">
-                                <i class="fas fa-lock"></i>
-                                <span><strong>Repositorio Privado</strong> - Contáctame para más información sobre este proyecto</span>
-                            </div>
+                            <a href="https://github.com/JojhanPerezArroyave/pawplay-feeder" class="repo-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> <span data-i18n="common.viewRepository">Ver repositorio</span>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Proyecto Signos Vitales -->
-                <div class="minciencias-card">
-                    <div class="minciencias-image">
-                        <!-- Espacio para imagen del proyecto signos vitales -->
+                <!-- Proyecto destacado: Adulto Mayor -->
+                <div class="featured-card">
+                    <div class="featured-image">
                         <img src="./assets/images/signosvitales.jpg" 
                              alt="Sistema de información para el cuidado de adultos mayores" 
                              class="project-img">
                     </div>
-                    <div class="minciencias-content">
-                        <h3>Sistema de Información para el Cuidado de Adultos Mayores</h3>
-                        <p class="project-description">
-                            Plataforma digital que moderniza el cuidado de adultos mayores tanto en hogares geriátricos como en 
-                            entornos familiares. El sistema integra IoT para capturar y registrar automáticamente los signos 
-                            vitales en tiempo real, garantizando monitoreo constante sin procesos manuales, y utiliza Inteligencia 
-                            Artificial para generar reportes claros, útiles y fáciles de interpretar para cuidadores, familiares y 
-                            profesionales de la salud.
-
-                        La solución está diseñada para mejorar la trazabilidad del cuidado, apoyar la toma de decisiones y 
-                        simplificar las tareas diarias de quienes acompañan al adulto mayor, ya sea en una institución o en
-                         casa. Cuenta con módulos personalizables, interfaz intuitiva y herramientas pensadas para brindar 
-                         tranquilidad y seguridad.
-                        </p>
+                    <div class="featured-content">
+                        <h3 data-i18n="featured.vitalcare.title">VitalCarePro</h3>
+                        <p class="project-summary" data-i18n="featured.vitalcare.summary">Monitoreo inteligente de adultos mayores para un cuidado continuo, claro y oportuno.</p>
+                        <div class="project-brief">
+                            <p><strong data-i18n="featured.brief.problem">Problema:</strong> <span data-i18n="featured.vitalcare.problem">El seguimiento manual de pacientes suele ser fragmentado y dificulta decisiones oportunas en cuidado geriátrico y familiar.</span></p>
+                            <p><strong data-i18n="featured.brief.approach">Enfoque:</strong> <span data-i18n="featured.vitalcare.approach">Plataforma con captura IoT de signos vitales y apoyo de IA para convertir datos clínicos en reportes claros para cuidadores y profesionales.</span></p>
+                            <p><strong data-i18n="featured.brief.impact">Aporte a calidad de vida:</strong> <span data-i18n="featured.vitalcare.impact">Mejora el acompañamiento del paciente, facilita intervenciones tempranas y da mayor tranquilidad a familias y equipos de cuidado.</span></p>
+                        </div>
                         <div class="project-tech">
-                            <span class="tech-badge">Sistema de Información</span>
-                            <span class="tech-badge">Salud Digital</span>
-                            <span class="tech-badge">Monitoreo</span>
-                            <span class="tech-badge">IoT</span>
+                            <span class="tech-badge" data-i18n="featured.vitalcare.tech1">Sistema de Información</span>
+                            <span class="tech-badge" data-i18n="featured.vitalcare.tech2">Salud Digital</span>
+                            <span class="tech-badge" data-i18n="featured.vitalcare.tech3">Monitoreo</span>
+                            <span class="tech-badge" data-i18n="featured.vitalcare.tech4">IoT</span>
                         </div>
                         <div class="project-links">
-                            <div class="private-repo-notice">
-                                <i class="fas fa-lock"></i>
-                                <span><strong>Repositorio Privado</strong> - Contáctame para más información sobre este proyecto</span>
+                            <a href="https://github.com/korpi-zip/hogargloria" class="repo-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> <span data-i18n="common.viewRepository">Ver repositorio</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto MCP SmartHome -->
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <div class="media-gallery">
+                            <img src="./assets/images/mcp-smarthome.jpg"
+                                 alt="Proyecto MCP SmartHome"
+                                 class="project-img">
+                            <div class="project-thumbnails">
+                                <img src="./assets/images/MCP2.png"
+                                     alt="MCP SmartHome - vista adicional"
+                                     class="project-img thumb-img">
+                                <img src="./assets/images/mcp3.jpg"
+                                     alt="MCP SmartHome - segunda vista adicional"
+                                     class="project-img thumb-img">
                             </div>
+                        </div>
+                    </div>
+                    <div class="featured-content">
+                        <h3 data-i18n="featured.mcp.title">MCP SmartHome</h3>
+                        <p class="project-summary" data-i18n="featured.mcp.summary">Control inteligente del hogar con IA vía MCP, permitiendo gestionar dispositivos con lenguaje natural y recibir respuestas claras en el mismo formato.</p>
+                        <div class="project-brief">
+                            <p><strong data-i18n="featured.brief.problem">Problema:</strong> <span data-i18n="featured.mcp.problem">Los hogares inteligentes suelen exigir múltiples apps y comandos técnicos, lo que dificulta una experiencia fluida para usuarios no especializados.</span></p>
+                            <p><strong data-i18n="featured.brief.approach">Enfoque:</strong> <span data-i18n="featured.mcp.approach">Uso de IA por medio de MCP para orquestar diferentes dispositivos desde instrucciones en lenguaje natural, con retroalimentación contextual también en lenguaje natural.</span></p>
+                            <p><strong data-i18n="featured.brief.impact">Aporte a calidad de vida:</strong> <span data-i18n="featured.mcp.impact">Introduce una interacción más intuitiva e innovadora, reduce fricción en tareas diarias y mejora la experiencia del usuario con herramientas modernas de IA.</span></p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge" data-i18n="featured.mcp.tech1">MCP</span>
+                            <span class="tech-badge" data-i18n="featured.mcp.tech2">IA</span>
+                            <span class="tech-badge" data-i18n="featured.mcp.tech3">Lenguaje Natural</span>
+                            <span class="tech-badge" data-i18n="featured.mcp.tech4">IoT</span>
+                            <span class="tech-badge" data-i18n="featured.mcp.tech5">Integración Inteligente</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/korpi-zip/MCP_Smart_Home" class="repo-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> <span data-i18n="common.viewRepository">Ver repositorio</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Micelial Spread -->
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="./assets/images/micelial-spread.png"
+                             alt="Proyecto Micelial Spread"
+                             class="project-img">
+                    </div>
+                    <div class="featured-content">
+                        <h3 data-i18n="featured.micelial.title">Micelial Spread</h3>
+                        <p class="project-summary" data-i18n="featured.micelial.summary">Proyecto de biomimética que toma inspiración en la organización de los hongos para diseñar algoritmos bioinspirados de formación eficiente de redes y rutas.</p>
+                        <div class="project-brief">
+                            <p><strong data-i18n="featured.brief.problem">Problema:</strong> <span data-i18n="featured.micelial.problem">Diseñar redes y rutas eficientes en entornos dinámicos y cambiantes es complejo, especialmente cuando las condiciones varían como ocurre en el suelo o en sistemas sociales humanos.</span></p>
+                            <p><strong data-i18n="featured.brief.approach">Enfoque:</strong> <span data-i18n="featured.micelial.approach">Observación de cómo los hongos estructuran sus redes miceliales para replicar ese fenómeno en una simulación computacional y construir un algoritmo bioinspirado adaptable.</span></p>
+                            <p><strong data-i18n="featured.brief.impact">Aporte a calidad de vida:</strong> <span data-i18n="featured.micelial.impact">Propone estrategias de conexión más resilientes y eficientes que pueden aplicarse a escenarios tecnológicos y sociales donde se requiere adaptación continua.</span></p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge" data-i18n="featured.micelial.tech1">Biomimética</span>
+                            <span class="tech-badge" data-i18n="featured.micelial.tech2">Algoritmos Bioinspirados</span>
+                            <span class="tech-badge" data-i18n="featured.micelial.tech3">Simulación</span>
+                            <span class="tech-badge" data-i18n="featured.micelial.tech4">Redes Adaptativas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/korpi-zip/Micelial_Spread" class="repo-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> <span data-i18n="common.viewRepository">Ver repositorio</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -145,9 +225,9 @@
     <!-- Projects Section -->
     <section id="proyectos" class="projects">
         <div class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
+            <h2 class="section-title" data-i18n="sections.allProjects">Todos mis proyectos</h2>
             <div id="projectsGrid" class="projects-grid">
-                <div class="loading">Cargando proyectos...</div>
+                <div class="loading" data-i18n="projects.loading">Cargando proyectos...</div>
             </div>
         </div>
     </section>
@@ -155,10 +235,11 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
+            <h2 class="section-title about-main-title" data-i18n="about.title">Sobre mí</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">Sobre mí</h2>
-                    <p>Estudiante de Ingeniería de Computación con experiencia en el desarrollo de soluciones de 
+                <div class="about-block about-profile">
+                    <h3 class="about-subtitle" data-i18n="about.profile">Perfil</h3>
+                    <p data-i18n="about.description">Estudiante de Ingeniería de Computación con experiencia en el desarrollo de soluciones de 
                         software innovadoras tanto en backend como en frontend, aplicando de forma efectiva tecnologías
                          modernas como inteligencia artificial e internet de las cosas. He estado involucrado en todas
                           las etapas del desarrollo de software (requerimientos, diseño, implementación, pruebas y 
@@ -167,37 +248,91 @@
                            problemas reales, integrando hardware y software cuando el proyecto lo requiere.</p>
                     
                     <div class="cv-download">
-                        <h3>Descargar hoja de vida / Download curriculum vitae</h3>
+                        <h3 data-i18n="about.cvTitle">Descargar hoja de vida / Download curriculum vitae</h3>
                         <div class="cv-buttons">
                             <a href="./CV's/CV_SantiagoEscobar.pdf" download class="btn btn-cv">
-                                <i class="fas fa-download"></i> CV en Español
+                                <i class="fas fa-download"></i> <span data-i18n="about.cvEs">CV en Español</span>
                             </a>
                             <a href="./CV's/ENG_CV_SantiagoEscobar.pdf" download class="btn btn-cv">
-                                <i class="fas fa-download"></i> CV in English
+                                <i class="fas fa-download"></i> <span data-i18n="about.cvEn">CV in English</span>
                             </a>
                         </div>
                     </div>
-                    
+                </div>
+
+                <div class="about-block about-education-languages">
                     <div class="timeline">
-                        <h3>Educación</h3>
+                        <h3 data-i18n="about.education">Educación</h3>
                         <div class="timeline-item">
                             <div class="timeline-year">2021 - Actualidad</div>
                             <div class="timeline-content">
                                 <h4>Ingeniería de Sistemas y Computación</h4>
-                                <p>Universidad de Caldas | 9no semestre</p>
+                                <p data-i18n="about.educationItem1">Universidad de Caldas | 9no semestre</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-year">2012 - 2013</div>
                             <div class="timeline-content">
                                 <h4>Técnico en Sistemas</h4>
-                                <p>SENA</p>
+                                <p data-i18n="about.educationItem2">SENA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;" data-i18n="about.languages">Idiomas</h3>
+                    <div class="language-skills">
+                        <div class="language-skill-item">
+                            <div class="language-header">
+                                <span class="language-name" data-i18n="about.english">Inglés</span>
+                                <span class="language-level-text">B2</span>
+                            </div>
+                            <div class="language-level-dots" aria-label="Nivel de inglés B2 en escala de 6">
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
+                                <span class="level-dot small breathing"></span>
+                                <span class="level-dot small"></span>
+                            </div>
+                        </div>
+
+                        <div class="language-skill-item">
+                            <div class="language-header">
+                                <span class="language-name" data-i18n="about.spanish">Español</span>
+                                <span class="language-level-text" data-i18n="about.spanishLevel">Nativo (C2)</span>
+                            </div>
+                            <div class="language-level-dots" aria-label="Nivel de español nativo C2 en escala de 6">
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
+                                <span class="level-dot active"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="skills">
-                    <h3>Habilidades Técnicas</h3>
+
+                <div class="about-block skills about-soft-skills">
+                    <h3 data-i18n="skills.softTitle">Habilidades Blandas</h3>
+                    <div class="skills-badges">
+                        <span class="badge soft-skill">Creatividad e Innovación</span>
+                        <span class="badge soft-skill">Organización</span>
+                        <span class="badge soft-skill">Pensamiento Sistémico (Visión Integral)</span>
+                        <span class="badge soft-skill">Enfoque Multidisciplinar</span>
+                        <span class="badge soft-skill">Pensamiento Analítico</span>
+                        <span class="badge soft-skill">Adaptabilidad</span>
+                        <span class="badge soft-skill">Aprendizaje Autónomo</span>
+                        <span class="badge soft-skill">Trabajo en Equipo</span>
+                        <span class="badge soft-skill">Resolución de Problemas</span>
+                        <span class="badge soft-skill">Comunicación Efectiva</span>
+                        <span class="badge soft-skill">Gestión de Proyectos</span>
+                        <span class="badge soft-skill">Kanban</span>
+                    </div>
+                </div>
+
+                <div class="about-block skills about-tech-skills">
+                    <h3 data-i18n="skills.techTitle">Habilidades Técnicas</h3>
                     <div class="skills-badges">
                         <span class="badge">Java</span>
                         <span class="badge">Spring Boot</span>
@@ -223,19 +358,12 @@
                         <span class="badge">Arduino</span>
                         <span class="badge">IoT</span>
                         <span class="badge">IA</span>
-                    </div>
-                    
-                    <h3 style="margin-top: 2rem; color: var(--primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Habilidades Blandas</h3>
-                    <div class="skills-badges">
-                        <span class="badge soft-skill">Pensamiento Analítico</span>
-                        <span class="badge soft-skill">Adaptabilidad</span>
-                        <span class="badge soft-skill">Aprendizaje Autónomo</span>
-                        <span class="badge soft-skill">Trabajo en Equipo</span>
-                        <span class="badge soft-skill">Resolución de Problemas</span>
-                        <span class="badge soft-skill">Comunicación Efectiva</span>
-                        <span class="badge soft-skill">Gestión de Proyectos</span>
-                        <span class="badge soft-skill">Kanban</span>
-                        <span class="badge soft-skill">Inglés B2</span>
+                        <span class="badge">MCP</span>
+                        <span class="badge">Automatización Inteligente</span>
+                        <span class="badge">Prototipado Rápido</span>
+                        <span class="badge">Integración Hardware-Software</span>
+                        <span class="badge">Simulación</span>
+                        <span class="badge">Algoritmos Bioinspirados</span>
                     </div>
                 </div>
             </div>
@@ -245,17 +373,17 @@
     <!-- Contact Section -->
     <section id="contacto" class="contact">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
+            <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
             <div class="contact-content">
                 <form class="contact-form" id="contactForm">
-                    <input type="text" name="name" placeholder="Tu nombre" required aria-label="Nombre">
-                    <input type="email" name="email" placeholder="Tu email" required aria-label="Email">
-                    <textarea name="message" placeholder="Tu mensaje" rows="5" required aria-label="Mensaje"></textarea>
+                    <input type="text" name="name" placeholder="Tu nombre" required aria-label="Nombre" data-i18n-placeholder="contact.namePlaceholder" data-i18n-aria-label="contact.nameAria">
+                    <input type="email" name="email" placeholder="Tu email" required aria-label="Email" data-i18n-placeholder="contact.emailPlaceholder" data-i18n-aria-label="contact.emailAria">
+                    <textarea name="message" placeholder="Tu mensaje" rows="5" required aria-label="Mensaje" data-i18n-placeholder="contact.messagePlaceholder" data-i18n-aria-label="contact.messageAria"></textarea>
                     <div id="formStatus" class="form-status"></div>
                     <button type="submit" class="btn btn-primary" id="submitBtn">
-                        <span class="btn-text">Enviar</span>
+                        <span class="btn-text" data-i18n="contact.send">Enviar</span>
                         <span class="btn-loader" style="display: none;">
-                            <i class="fas fa-spinner fa-spin"></i> Enviando...
+                            <i class="fas fa-spinner fa-spin"></i> <span data-i18n="contact.sending">Enviando...</span>
                         </span>
                     </button>
                 </form>
@@ -279,13 +407,16 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; <span id="currentYear">2024</span> Santiago Escobar Alzate. Todos los derechos reservados.</p>
+        <p>&copy; <span id="currentYear">2024</span> Santiago Escobar Alzate. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
     </footer>
 
     <!-- Modal de imagen -->
     <div id="imageModal" class="image-modal">
         <span class="modal-close">&times;</span>
+        <button class="modal-nav modal-prev" id="modalPrev" aria-label="Anterior" data-i18n-aria-label="modal.prev"><i class="fas fa-chevron-left"></i></button>
         <img class="modal-content" id="modalImage" alt="">
+        <video class="modal-content" id="modalVideo" controls></video>
+        <button class="modal-nav modal-next" id="modalNext" aria-label="Siguiente" data-i18n-aria-label="modal.next"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <script src="script.js"></script>
